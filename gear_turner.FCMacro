@@ -1,0 +1,11 @@
+from PySide import QtGui
+import time
+
+step_size = 1
+end_angle = 360
+start_angle = 0
+for aa in range(start_angle,end_angle,step_size):
+    App.ActiveDocument.dd.ddAngle = float(aa/1.0)
+    App.ActiveDocument.recompute()
+    time.sleep(0.01)
+    QtGui.QApplication.processEvents()
